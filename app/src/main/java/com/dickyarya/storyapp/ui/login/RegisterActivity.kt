@@ -32,7 +32,7 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if(binding.etName.text.isEmpty()){
+                if(binding.etName.text!!.isEmpty()){
                     binding.etName.error = "Nama harus diisi"
                 }
 
@@ -63,7 +63,7 @@ class RegisterActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (binding.etPassword.text.length <=5){
+                if (binding.etPassword.text!!.length <=5){
                     binding.etPassword.error = "Must be more than 6 Character"
                 }
             }
@@ -76,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.btnRegister.setOnClickListener {
             val name: String = binding.etName.text.toString()
             val email: String = binding.etEmail.text.toString()
-            val password: String = binding.etPassword.toString()
+            val password: String = binding.etPassword.text.toString()
             showLoading(true)
 
             actRegister(name, email, password)

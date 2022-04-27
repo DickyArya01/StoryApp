@@ -20,7 +20,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvLogin">
 
-        <EditText
+        <com.dickyarya.storyapp.component.NameEditText
             android:id="@+id/etName"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -34,7 +34,6 @@
             android:ems="10"
             android:fontFamily="@font/outfit_regular"
             android:hint="@string/name"
-            android:inputType="textPersonName"
             android:minHeight="48dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
@@ -42,7 +41,7 @@
             android:textColorHint="#757575"
             android:textSize="16sp" />
 
-        <EditText
+        <com.dickyarya.storyapp.component.EmailEditText
             android:id="@+id/etEmail"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -56,7 +55,6 @@
             android:ems="10"
             android:fontFamily="@font/outfit_regular"
             android:hint="@string/email"
-            android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:paddingStart="8dp"
             android:paddingEnd="8dp"
@@ -64,7 +62,7 @@
             android:textColorHint="#757575"
             android:textSize="16sp" />
 
-        <EditText
+        <com.dickyarya.storyapp.component.PasswordEditText
             android:id="@+id/etPassword"
             style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"

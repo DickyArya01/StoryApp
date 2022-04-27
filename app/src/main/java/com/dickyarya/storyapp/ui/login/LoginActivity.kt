@@ -51,7 +51,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (binding.etPassword.text.length <=5){
+                if (binding.etPassword.text!!.length <=5){
                     binding.etPassword.error = "Must be more than 6 Character"
                 }
             }
