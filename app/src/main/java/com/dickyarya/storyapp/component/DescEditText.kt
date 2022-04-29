@@ -29,7 +29,7 @@ class DescEditText: AppCompatEditText {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 if(text!!.isEmpty()){
-                   error = "Deskripsi harus diisi"
+                   error = "Description must be filled"
                 }
 
             }
