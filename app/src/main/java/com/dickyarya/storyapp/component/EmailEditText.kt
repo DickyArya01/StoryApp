@@ -24,6 +24,21 @@ class EmailEditText: AppCompatEditText {
 
     private fun init(){
         inputType = InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS
+        addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if(!Patterns.EMAIL_ADDRESS.matcher(text.toString()).matches()){
+                    error = "Invalid Email"
+                }
+
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+            }
+
+        })
     }
 
 }

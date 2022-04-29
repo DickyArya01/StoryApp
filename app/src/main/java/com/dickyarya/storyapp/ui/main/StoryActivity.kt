@@ -63,6 +63,7 @@ class StoryActivity : AppCompatActivity() {
             R.id.loMenu -> {
                 preference.logOut()
                 moveIntentLogOut()
+                finish()
                 true
             }
             R.id.asMenu -> {

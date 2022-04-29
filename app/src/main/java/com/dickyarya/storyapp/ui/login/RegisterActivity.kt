@@ -27,51 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         playAnimation()
         showLoading(false)
 
-        binding.etName.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if(binding.etName.text!!.isEmpty()){
-                    binding.etName.error = "Nama harus diisi"
-                }
-
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-        })
-
-        binding.etEmail.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if(!Patterns.EMAIL_ADDRESS.matcher(binding.etEmail.text.toString()).matches()){
-                    binding.etEmail.error = "Invalid Email"
-                }
-
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-        })
-        binding.etPassword.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
-
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (binding.etPassword.text!!.length <=5){
-                    binding.etPassword.error = "Must be more than 6 Character"
-                }
-            }
-
-            override fun afterTextChanged(s: Editable?) {
-            }
-
-        })
 
         binding.btnRegister.setOnClickListener {
             val name: String = binding.etName.text.toString()
