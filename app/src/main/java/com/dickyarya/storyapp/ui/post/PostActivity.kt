@@ -73,8 +73,12 @@ class PostActivity : AppCompatActivity() {
         }
 
         binding.btnUpload.setOnClickListener {
-            showLoading(true)
-            uploadImage()
+            if(binding.etDescription.text.isNullOrEmpty()){
+                showToast("Deskripsi harus diisi")
+            }else{
+                showLoading(true)
+                uploadImage()
+            }
         }
     }
 

@@ -60,7 +60,7 @@
                 tools:ignore="ButtonStyle" />
         </LinearLayout>
 
-        <EditText
+        <com.dickyarya.storyapp.component.DescEditText
             android:id="@+id/etDescription"
             android:layout_width="0dp"
             android:layout_height="200dp"
