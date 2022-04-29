@@ -74,9 +74,8 @@ class PostActivity : AppCompatActivity() {
 
         binding.btnUpload.setOnClickListener {
             if(binding.etDescription.text.isNullOrEmpty()){
-                showToast("Deskripsi harus diisi")
+                showToast("Description must be filled")
             }else{
-                showLoading(true)
                 uploadImage()
             }
         }
@@ -88,7 +87,9 @@ class PostActivity : AppCompatActivity() {
 
     private fun uploadImage(){
         if (getFile != null){
-           val file = reduceSizeImage( getFile as File)
+            showLoading(true)
+
+            val file = reduceSizeImage( getFile as File)
 
            val description: String = binding.etDescription.text.toString()
             val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
