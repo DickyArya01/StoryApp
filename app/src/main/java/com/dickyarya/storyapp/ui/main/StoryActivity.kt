@@ -3,6 +3,8 @@ package com.dickyarya.storyapp.ui.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Debug
+import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.dickyarya.storyapp.R
 import com.dickyarya.storyapp.databinding.ActivityStoryBinding
 import com.dickyarya.storyapp.model.Story
+import com.dickyarya.storyapp.model.StoryResponse
 import com.dickyarya.storyapp.preferences.LoginPreference
 import com.dickyarya.storyapp.ui.detail.DetailActivity
 import com.dickyarya.storyapp.ui.post.PostActivity
@@ -21,6 +24,7 @@ class StoryActivity : AppCompatActivity(){
     private lateinit var preference: LoginPreference
     private lateinit var viewModel: StoryViewModel
     private lateinit var storyAdapter: StoryAdapter
+    private lateinit var listStory: StoryResponse
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,7 +82,7 @@ class StoryActivity : AppCompatActivity(){
                 true
             }
             R.id.maMenu -> {
-                showToast("MapActivity")
+                moveIntentMap()
                 true
             }
             else -> true
@@ -102,6 +106,12 @@ class StoryActivity : AppCompatActivity(){
             it.putExtra(DetailActivity.DATE, data.createdAt)
             it.putExtra(DetailActivity.LAT, data.lat)
             it.putExtra(DetailActivity.LON, data.lon)
+            startActivity(it)
+        }
+    }
+
+    private fun moveIntentMap(){
+        Intent(this, MapsActivity::class.java).also {
             startActivity(it)
         }
     }
