@@ -3,9 +3,8 @@ package com.dickyarya.storyapp.ui.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
+import android.view.*
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dickyarya.storyapp.R
@@ -15,12 +14,14 @@ import com.dickyarya.storyapp.preferences.LoginPreference
 import com.dickyarya.storyapp.ui.detail.DetailActivity
 import com.dickyarya.storyapp.ui.post.PostActivity
 import com.dickyarya.storyapp.ui.login.LoginActivity
+import kotlin.math.abs
 
-class StoryActivity : AppCompatActivity() {
+class StoryActivity : AppCompatActivity(){
     private lateinit var binding: ActivityStoryBinding
     private lateinit var preference: LoginPreference
     private lateinit var viewModel: StoryViewModel
     private lateinit var storyAdapter: StoryAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +77,10 @@ class StoryActivity : AppCompatActivity() {
                 moveIntentPostStory()
                 true
             }
+            R.id.maMenu -> {
+                showToast("MapActivity")
+                true
+            }
             else -> true
         }
     }
@@ -127,6 +132,14 @@ class StoryActivity : AppCompatActivity() {
         }
     }
 
+    private fun showToast(text: String){
+        Toast.makeText(
+            this,
+            text,
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
     private fun showLoading(state: Boolean){
         if(state){
             binding.progressBar3.visibility = View.VISIBLE
@@ -134,4 +147,5 @@ class StoryActivity : AppCompatActivity() {
             binding.progressBar3.visibility = View.GONE
         }
     }
+
 }

@@ -36,4 +36,5 @@
     <string name="detail_image">Detail Image</string>
     <string name="latitude_longitude">Latitude, Longitude</string>
     <string name="logo_lokasi">Logo Lokasi</string>
+    <string name="map_detail_story">Map Detail Story</string>
 </resources>
