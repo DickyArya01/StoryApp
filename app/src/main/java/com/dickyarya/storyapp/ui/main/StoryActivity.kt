@@ -95,6 +95,8 @@ class StoryActivity : AppCompatActivity() {
             it.putExtra(DetailActivity.DESCRIPTION, data.description)
             it.putExtra(DetailActivity.PHOTO, data.photoUrl)
             it.putExtra(DetailActivity.DATE, data.createdAt)
+            it.putExtra(DetailActivity.LAT, data.lat)
+            it.putExtra(DetailActivity.LON, data.lon)
             startActivity(it)
         }
     }

@@ -29,7 +29,8 @@ android:layout_height="match_parent">
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:scaleType="fitXY"
-                    tools:srcCompat="@drawable/image" />
+                    tools:srcCompat="@drawable/image"
+                    android:contentDescription="@string/detail_image" />
 
                 <TextView
                     android:id="@+id/tvDetailDate"
@@ -37,7 +38,7 @@ android:layout_height="match_parent">
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom|end"
                     android:background="#FFFFFF"
-                    android:text="xx/xx/xxxx"
+                    android:text="@string/date_text_format"
                     android:textColor="#E6000000" />
 
             </FrameLayout>
@@ -54,7 +55,8 @@ android:layout_height="match_parent">
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+                app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+                tools:ignore="RtlSymmetry" />
 
             <TextView
                 android:id="@+id/tvDetailDescription"
@@ -70,6 +72,39 @@ android:layout_height="match_parent">
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDetailName" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layLatLon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDetailDescription">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:contentDescription="@string/logo_lokasi"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_baseline_location_on_24" />
+
+                <TextView
+                    android:id="@+id/tvLatLon"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/outfit_regular"
+                    android:paddingBottom="16dp"
+                    android:text="@string/latitude_longitude"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

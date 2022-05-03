@@ -32,4 +32,8 @@
     <string name="image">Image</string>
     <string name="shutter">Shutter</string>
     <string name="switch_camera">Switch</string>
+    <string name="date_text_format">xx/xx/xxxx</string>
+    <string name="detail_image">Detail Image</string>
+    <string name="latitude_longitude">Latitude, Longitude</string>
+    <string name="logo_lokasi">Logo Lokasi</string>
 </resources>
