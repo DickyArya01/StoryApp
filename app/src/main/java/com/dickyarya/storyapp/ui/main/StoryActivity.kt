@@ -24,7 +24,6 @@ class StoryActivity : AppCompatActivity(){
     private lateinit var preference: LoginPreference
     private lateinit var viewModel: StoryViewModel
     private lateinit var storyAdapter: StoryAdapter
-    private lateinit var listStory: StoryResponse
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
